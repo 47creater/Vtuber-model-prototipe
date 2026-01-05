@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web VTuber</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- MediaPipe FaceMesh -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Debug Camera (Hidden by default or small) -->
+        <video class="input_video" autoplay playsinline muted></video>
+        
+        <!-- Character Container -->
+        <div class="character-container">
+            <img id="character" src="base.png" alt="Character">
+        </div>
+        
+        <!-- Controls / Info -->
+        <div class="controls">
+            <button onclick="toggleDebug()">Toggle Debug Camera</button>
+            <p>Expressions: Auto (Blink/Talk) or Keys: [L]augh, [C]ry, [N]ormal</p>
+        </div>
+    </div>
+
+    <!-- Debug Canvas -->
+    <canvas class="output_canvas" width="320" height="240"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
